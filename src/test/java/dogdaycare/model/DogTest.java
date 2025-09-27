@@ -1,9 +1,10 @@
 package dogdaycare.model;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class DogTest {
     @Test
-    void getName() {
+    public void testGetName() {
 
         Owner Katie = new Owner();
         Katie.setName("Katie");
@@ -16,7 +17,8 @@ public class DogTest {
         dog.setVaccinated(true);
         dog.setOwner(Katie);
 
-        assert(dog.getName().equals("Buddy"));
+        Assertions.assertEquals("Buddy", dog.getName());
+        Assertions.assertNotEquals("Max", dog.getName());
 
     }
 
@@ -40,17 +42,45 @@ public class DogTest {
 //    void setAge() {
 //    }
 //
-//    @Test
-//    void isVaccinated() {
-//    }
+    @Test
+    public void testIsVaccinated() {
+
+        Owner Katie = new Owner();
+        Katie.setName("Katie");
+        Katie.setPhoneNumber("123-456-7890");
+
+        Dog dog = new Dog();
+        dog.setName("Buddy");
+        dog.setBreed("Golden Retriever");
+        dog.setAge(3);
+        dog.setVaccinated(true);
+        dog.setOwner(Katie);
+
+        Assertions.assertTrue(dog.isVaccinated());
+    }
 //
 //    @Test
 //    void setVaccinated() {
 //    }
 //
-//    @Test
-//    void getOwner() {
-//    }
+    @Test
+    void getOwner() {
+
+        Owner Katie = new Owner();
+        Katie.setName("Katie");
+        Katie.setPhoneNumber("123-456-7890");
+
+        Dog dog = new Dog();
+        dog.setName("Buddy");
+        dog.setBreed("Golden Retriever");
+        dog.setAge(3);
+        dog.setVaccinated(true);
+        dog.setOwner(Katie);
+
+        Assertions.assertEquals(Katie, dog.getOwner());
+    }
+
+
 //
 //    @Test
 //    void setOwner() {
