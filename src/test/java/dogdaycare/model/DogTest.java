@@ -3,8 +3,23 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class DogTest {
+/*TODO add more focused tests so it seems less like im just testing everything
+     For Dog
+         * testOwnerGettersAndSetters
+         * testIsDogEligibleForCheckIn
+         * testIsDogAttchedToCorrectOwner
+     For Owner
+        * testOwnerGettersAndSetters
+        * testIsOwnerAttachedToDog
+    For DaycareService
+        * testCheckDogIn
+        * testCheckDogOut
+        * testCheckInDogAtMaxCapacity
+        * testCannotCheckInUnvaccinatedDog
+        * testAttendanceListUpdates
+     */
     @Test
-    public void testGetName() {
+    public void testToGetNameOfDog() {
 
         Owner Katie = new Owner();
         Katie.setName("Katie");
@@ -22,28 +37,14 @@ public class DogTest {
 
     }
 
-//    @Test
-//    void setName() {
-//    }
-//
-//    @Test
-//    void getBreed() {
-//    }
-//
-//    @Test
-//    void setBreed() {
-//    }
-//
-//    @Test
-//    void getAge() {
-//    }
-//
-//    @Test
-//    void setAge() {
-//    }
-//
     @Test
-    public void testIsVaccinated() {
+    void setName() {
+
+
+    }
+
+    @Test
+    public void testIfDogIsVaccinated() {
 
         Owner Katie = new Owner();
         Katie.setName("Katie");
@@ -58,13 +59,9 @@ public class DogTest {
 
         Assertions.assertTrue(dog.isVaccinated());
     }
-//
-//    @Test
-//    void setVaccinated() {
-//    }
-//
+
     @Test
-    void getOwner() {
+    public void testToGetDogOwner() {
 
         Owner Katie = new Owner();
         Katie.setName("Katie");
@@ -81,12 +78,19 @@ public class DogTest {
     }
 
 
-//
-//    @Test
-//    void setOwner() {
-//    }
-//
-//    @Test
-//    void isEligibleForCheckIn() {
-//    }
+    @Test
+    public void testIfDogIsEligibleForCheckIn() {
+        Owner Katie = new Owner();
+        Katie.setName("Katie");
+        Katie.setPhoneNumber("123-456-7890");
+
+        Dog dog = new Dog();
+        dog.setName("Buddy");
+        dog.setBreed("Golden Retriever");
+        dog.setAge(3);
+        dog.setVaccinated(true);
+        dog.setOwner(Katie);
+
+        Assertions.assertTrue(dog.isEligibleForCheckIn());
+    }
 }
