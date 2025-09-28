@@ -1,8 +1,8 @@
 package dogdaycare.model;
 
 public class Owner {
-    String name;
-    String phoneNumber;
+    private String name;
+    private String phoneNumber;
 
     public String getName() {
         return name;

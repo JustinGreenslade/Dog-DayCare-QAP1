@@ -1,11 +1,11 @@
 package dogdaycare.model;
 
 public class Dog {
-    String name;
-    String breed;
-    int age;
-    boolean isVaccinated;
-    Owner owner;
+    private String name;
+    private String breed;
+    private int age;
+    private boolean isVaccinated;
+    private Owner owner;
 
     public String getName() {
         return name;
@@ -49,6 +49,11 @@ public class Dog {
 
     public  boolean isEligibleForCheckIn() {
         return isVaccinated;
+    }
+
+    @Override
+    public String toString(){
+        return name + " (" + " Owner: " + owner.getName() +" )";
     }
 }
 
